@@ -40,7 +40,9 @@ public class Cripto {
     *
     */
     public static String encriptador( int chave, String mensagem){
+
         StringBuilder mensagemCodificada = new StringBuilder();
+
         int tamanhoMensagem = mensagem.length();
 
         for(int l= 0 ;l< tamanhoMensagem; l++ ){
@@ -62,13 +64,14 @@ public class Cripto {
      *
      */
     public static  String desencripta(int chave, String mensagemCodificada){
+
         StringBuilder mensagem = new StringBuilder();
 
         int tamanhoMensagem = mensagemCodificada.length();
 
-        for(int l= 0 ;l < tamanhoMensagem; l++ ){
+        for(int l= 0; l < tamanhoMensagem; l++ ){
 
-            int letraDecodificada = ((int)mensagemCodificada.charAt(l))+ chave;
+            int letraDecodificada = ((int)mensagemCodificada.charAt(l)) - chave;
 
             while(letraDecodificada < 32){
                 letraDecodificada += 94;
