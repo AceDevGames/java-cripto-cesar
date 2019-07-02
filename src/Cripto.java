@@ -3,28 +3,61 @@ public class Cripto {
 
     public static void main(String[] args){
         try {
+
             Scanner captura = new Scanner(System.in);
             System.out.println("*********************************");
 
-            //Leitura da mensagem e chave de criptografia
-            System.out.println("Informe a mensagem a ser criptografada!");
-            String mensagem = captura.nextLine();
+            System.out.println("Bem vindo ao programa de criptografia Cesar Cripto \n Escolha uma opção abaixo: \n");
+            System.out.println("Digite 1 para criptografar");
+            System.out.println("Digite 2 para descriptografar");
+            System.out.println("Digite 0 Para sair");
 
-            System.out.println("Informe o numero que servira de chave de codificação!");
-            int chave = captura.nextInt();
+            int opcao = captura.nextInt();
+            captura.nextLine();
 
-            //Codificando
-            System.out.println("*******  Codificando  *******");
-            String mensagemCodificada = encriptador(chave, mensagem);
+            switch(opcao){
+                case 1:{
+                    //Leitura da mensagem e chave de criptografia
+                    System.out.println("Informe a mensagem a ser criptografada!");
+                    String mensagem = captura.nextLine();
+                   // captura.nextLine();
 
-            //Decodificando
-            System.out.println("*******  Decodificando  *******");
-            String mensagemDecodificada = desencripta(chave, mensagemCodificada);
+                    System.out.println("Informe o numero que servira de chave de codificação!");
+                    int chave = captura.nextInt();
 
-            //Impressão dos resultados
+                    //Codificando
+                    System.out.println("*******  Codificando  *******");
+                    String mensagemCodificada = encriptador(chave, mensagem);
 
-            System.out.println("\n\n MENSAGEM CRIPTOGRAFADA :" + mensagemCodificada);
-            System.out.println("\n\n MENSAGEM DECRIPTOGRAFADA :" + mensagemDecodificada);
+                    System.out.println("\n\n MENSAGEM CRIPTOGRAFADA :" + mensagemCodificada);
+                    break;
+                }
+                case 2:{
+                    //Leitura da mensagem e chave de criptografia
+                    System.out.println("Informe a mensagem a ser criptografada!");
+                    String mensagem = captura.nextLine();
+
+                    System.out.println("Informe o numero que servira de chave de codificação!");
+                    int chave = captura.nextInt();
+
+                    //Decodificando
+                    System.out.println("*******  Decodificando  *******");
+                    String mensagemDecodificada = desencripta(chave, mensagem);
+                    System.out.println("\n\n MENSAGEM DECRIPTOGRAFADA :" + mensagemDecodificada);
+
+                }
+
+                case 0 :{
+                    System.out.println("Saindo do programa!");
+                    System.exit(0);
+
+                    break;
+                }
+                default:{
+                    System.out.println("Opção Inválida! \n Insira 1 ou 2 ou 0");
+                }
+            }
+
 
 
             System.out.println("*********************************");
